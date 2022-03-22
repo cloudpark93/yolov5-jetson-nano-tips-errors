@@ -9,6 +9,8 @@ There are tons of githubs and blogs which kindly gives you the instructions on "
 
 * [Website that you may refer to for "how to install YOLOv5 on Jetson Nano](https://sahilchachra.medium.com/setting-up-nvidias-jetson-nano-from-jetpack-to-yolov5-60a004bf48bc)
 
+* * *
+
 ## Tip 1: Python version 😊
 The requirement for Python version is >= 3.7.0, but YOLOv5 actaully works with the **pre-installed Python 3.6.9**.
 * When you use pre-installed Python 3.6.9, you are recommended to use `pip3 install` command to install libraries.
@@ -21,7 +23,7 @@ You can see that YOLOv5 on Jetson Nano works with Python 3.6.9 in the images bel
 ## Tip 2: OpenCV compile 🤢
 I tried to utilize the pre-installed opencv-python, but it kept giving me some errors.
 
-For the ease of operation without tedious errors, I recommend you to install OpenCV in your Jetson Nano.
+For the ease of operation without trivial errors, I recommend you to install OpenCV in your Jetson Nano.
 
 We all know that it is super annoying to install OpenCV in Ubuntu.
 
@@ -46,7 +48,26 @@ In my case, I uninstalled opencv-python. However, when running the yolov5 (detec
 Therefore, I commented out opencv-python line in the **requirements.txt** file.
 
   * opencv-python>=version → # opencv-python>=version
-  
+
+## Tip 4: Change camera screen frame size for real-time detection 😜
+Some of you guys may suffer from larger screen frame than the size of the monitor.
+
+In this case, you can simple add two more lines under the `class LoadStreams:` in the **datasets.py** file.
+
+The location of the **datasets.py** is ***yolov5 → utils → datasets.py***
+
+```
+yolov5/
+│   ...
+└───utils/
+    │   datasets.py
+    │   ...
+```
+
+
+
+* * *
+
 ## Error 1: opencv illegal instructions (core dumped) 😑
   1. Open the **.bashrc** file in the terminal: `sudo vi ~/.bashrc` or `sudo nano ~/.bashrc`
 
@@ -80,4 +101,3 @@ Try the following commands in the terminal.
 `sudo pip3 install Pillow==7.1.2`
 
  * I used `pip3` because I am using python3.
-
