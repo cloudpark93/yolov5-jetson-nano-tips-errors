@@ -57,9 +57,27 @@ Therefore, I commented out opencv-python line in the **requirements.txt** file.
 ## Error 2: user warning: failed to load image python extension 😑
 Try to downgrade your **torch** and **torchvision** versions.
 
+Please check the compatible torch and torchvision versions in the [Nvidia developer forum](https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-10-now-available/72048).
+
+Go to the link attached above, click **Installation**, then you can see the compatible versions as below:
+
+<img src = "https://user-images.githubusercontent.com/78515689/159426599-a274a345-bb20-4500-9ff9-0dcf9f78f8b4.png" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159426709-fb42ac73-9700-4332-b21e-b40e59297da9.JPG" width="600px" height="270px"></img>
+
 In my case, I installed torch 1.7.0 and torchvision 0.8.1, and did not get the error anymore.
 
 <img src = "https://user-images.githubusercontent.com/78515689/159422796-def224dc-63f9-4c21-874e-75f99f9ca878.JPG" width="400px" height="270px"></img>
 
-For your information, you can check the compatible torch and torchvision versions in the [Nvidia developer forum](https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-10-now-available/72048).
+## Error 3: The_imagingft C module is not installed 😑
+This is because your PIL has been compiled without **libfreetype**.
+
+Try the following commands in the terminal.
+
+`sudo apt-get install libfreetype6-dev`
+
+`sudo pip3 uninstall pillow`
+
+`sudo pip3 install Pillow==7.1.2`
+
+ * I used `pip3` because I am using python3.
 
