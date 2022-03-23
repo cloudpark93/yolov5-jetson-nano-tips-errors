@@ -87,7 +87,7 @@ yolov5/
 
  3. If you add any unsupported values of width and height, you will receive GStreamer warning like the image below.
 
-<img src = "https://user-images.githubusercontent.com/78515689/159603221-1a91af7f-0426-4933-bf69-d323fdaf80b1.png" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159603853-dd4a1f41-2d8b-418b-999d-44088cc79148.png" width="400px" height="270px"></img>
 
  4. Save the changes, and run YOLOv5 to check the frame size.
 
