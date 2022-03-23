@@ -130,3 +130,8 @@ Try the following commands in the terminal.
 `sudo pip3 install Pillow==7.1.2`
 
  * I used `pip3` because I am using python3.
+
+* * *
+## co-researcher
+Please visit my [**co-researcher's**](https://github.com/jinsoo9595) github as well!  
+https://github.com/jinsoo9595
