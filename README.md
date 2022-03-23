@@ -17,8 +17,7 @@ The requirement for Python version is >= 3.7.0, but YOLOv5 actaully works with t
 
 You can see that YOLOv5 on Jetson Nano works with Python 3.6.9 in the images below!
 
-<img src = "https://user-images.githubusercontent.com/78515689/159396237-0972a02b-5911-44b7-a864-e24bd61223b2.png" width="400px" height="270px">
-<img src = "https://user-images.githubusercontent.com/78515689/159396749-778182f0-e172-4ff4-b79a-b9d37b7ba4e0.jpg" width="400px" height="270px">
+<img src = "https://user-images.githubusercontent.com/78515689/159396237-0972a02b-5911-44b7-a864-e24bd61223b2.png" width="400px" height="270px"><img src = "https://user-images.githubusercontent.com/78515689/159396749-778182f0-e172-4ff4-b79a-b9d37b7ba4e0.jpg" width="400px" height="270px">
 
 ## Tip 2: OpenCV compile 🤢
 I tried to utilize the pre-installed opencv-python, but it kept giving me some errors.
@@ -76,8 +75,7 @@ yolov5/
     * `v4l2-ctl --list-formats-ext`
     * You can see that the supported frame sizes are various such as 640(width)x480(height), 800(w)x600(h) etc.
     
-<img src = "https://user-images.githubusercontent.com/78515689/159601289-1e0a7950-b417-48dd-be2a-5da56f199a77.png" width="400px" height="270px">
-<img src = "https://user-images.githubusercontent.com/78515689/159601353-59f5585d-ea89-4f18-ac5a-98a4e8515fc1.png" width="400px" height="270px">
+<img src = "https://user-images.githubusercontent.com/78515689/159601289-1e0a7950-b417-48dd-be2a-5da56f199a77.png" width="400px" height="270px"><img src = "https://user-images.githubusercontent.com/78515689/159601353-59f5585d-ea89-4f18-ac5a-98a4e8515fc1.png" width="400px" height="270px">
 
  2. Add two more lines under the `class LoadStreams:` in **datasets.py** file.
  
@@ -111,8 +109,7 @@ Please check the compatible torch and torchvision versions in the [Nvidia develo
 
 Go to the link attached above, click **Installation**, then you can see the compatible versions as below:
 
-<img src = "https://user-images.githubusercontent.com/78515689/159426599-a274a345-bb20-4500-9ff9-0dcf9f78f8b4.png" width="400px" height="270px">
-<img src = "https://user-images.githubusercontent.com/78515689/159426709-fb42ac73-9700-4332-b21e-b40e59297da9.JPG" width="600px" height="270px">
+<img src = "https://user-images.githubusercontent.com/78515689/159426599-a274a345-bb20-4500-9ff9-0dcf9f78f8b4.png" width="400px" height="270px"><img src = "https://user-images.githubusercontent.com/78515689/159426709-fb42ac73-9700-4332-b21e-b40e59297da9.JPG" width="600px" height="270px">
 
 In my case, I installed torch 1.7.0 and torchvision 0.8.1, and did not get the error anymore.
 
