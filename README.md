@@ -40,7 +40,8 @@ Things to be careful when installing OpenCV:
     * `/etc/dphys-swapfile` → `CONF_SWARSIZE=4096` (this is only for OpenCV version other than 4.5.2)
 
   * Once your build is successfully completed, you can see from `jtop` that OpenCV has been successfully compiled with CUDA.
-  <img src = "https://user-images.githubusercontent.com/78515689/159414692-acce5b4f-daaa-4e2c-b77f-84818c279463.JPG" width="400px" height="270px"></img>
+  
+<img src = "https://user-images.githubusercontent.com/78515689/159414692-acce5b4f-daaa-4e2c-b77f-84818c279463.JPG" width="400px" height="270px"></img>
   
 ## Tip 3: Change requirements.txt in yolov5 folder 😘
 In my case, I uninstalled opencv-python. However, when running the yolov5 (detect.py), it kept installing the opencv-python and this eventually caused errors.
@@ -52,9 +53,13 @@ Therefore, I commented out opencv-python line in the **requirements.txt** file.
 ## Tip 4: Change camera screen frame size for real-time detection 😜
 Some of you guys may suffer from larger screen frame than the size of the monitor.
 
-In this case, you can simple add two more lines under the `class LoadStreams:` in the **datasets.py** file.
+I suffered as I am using a mini monitor for Jetson Nano (check the image below).
 
-The location of the **datasets.py** is ***yolov5 → utils → datasets.py***
+<img src = "https://user-images.githubusercontent.com/78515689/159601538-4acda8fa-9f9f-4500-bc3c-d596789624b9.png" width="400px" height="270px"></img>
+
+In this case, you can simply resolve this matter by checking the supported frame sizez of the camera, and add two more lines under the `class LoadStreams:` in **datasets.py** file.
+
+For your information, the location of **datasets.py** is ***yolov5 → utils → datasets.py***
 
 ```
 yolov5/
@@ -64,8 +69,30 @@ yolov5/
     │   ...
 ```
 
+ 1. Check the supported frame sizes of the camera in the terminal.
+ 
+    * `v4l2-ctl --list-formats-ext`
+    * You can see that the supported frame sizes are various such as 640(width)x480(height), 800(w)x600(h) etc.
+    
+<img src = "https://user-images.githubusercontent.com/78515689/159601289-1e0a7950-b417-48dd-be2a-5da56f199a77.png" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159601353-59f5585d-ea89-4f18-ac5a-98a4e8515fc1.png" width="400px" height="270px"></img>
 
+ 2. Add two more lines under the `class LoadStreams:` in **datasets.py** file.
+ 
+    * ***Make sure to add only the supported frame sizes!***
+    * `int(cap.set(cv2.CAP_PROP_FRAME_WIDTH, supported width value))`
+    * `int(cap.set(cv2.CAP_PROP_FRAME_HEIGHT, supported height value))`
+    
+<img src = "https://user-images.githubusercontent.com/78515689/159602346-9a255892-85e6-4fae-be11-2b622e162d68.png" width="500px" height="270px"></img>
 
+ 3. If you add any unsupported values of width and height, you will receive GStreamer warning like the image below.
+
+<img src = "https://user-images.githubusercontent.com/78515689/159603221-1a91af7f-0426-4933-bf69-d323fdaf80b1.png" width="400px" height="270px"></img>
+
+ 4. Save the changes, and run YOLOv5 to check the frame size.
+
+<img src = "https://user-images.githubusercontent.com/78515689/159603375-72be5013-15ce-4385-9f48-ec4cefe2796e.png" width="400px" height="270px"></img>
+    
 * * *
 
 ## Error 1: opencv illegal instructions (core dumped) 😑
