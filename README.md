@@ -17,7 +17,7 @@ The requirement for Python version is >= 3.7.0, but YOLOv5 actaully works with t
 
 You can see that YOLOv5 on Jetson Nano works with Python 3.6.9 in the images below!
 
-<img src = "https://user-images.githubusercontent.com/78515689/159396237-0972a02b-5911-44b7-a864-e24bd61223b2.png" width="400px" height="270px"><img src = "https://user-images.githubusercontent.com/78515689/159396749-778182f0-e172-4ff4-b79a-b9d37b7ba4e0.jpg" width="400px" height="270px">
+<img src = "https://user-images.githubusercontent.com/78515689/159396237-0972a02b-5911-44b7-a864-e24bd61223b2.png" width="400px" height="270px">  <img src = "https://user-images.githubusercontent.com/78515689/159396749-778182f0-e172-4ff4-b79a-b9d37b7ba4e0.jpg" width="400px" height="270px">
 
 ## Tip 2: OpenCV compile 🤢
 I tried to utilize the pre-installed opencv-python, but it kept giving me some errors.
