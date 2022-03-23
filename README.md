@@ -18,7 +18,7 @@ The requirement for Python version is >= 3.7.0, but YOLOv5 actaully works with t
 You can see that YOLOv5 on Jetson Nano works with Python 3.6.9 in the images below!
 
 <img src = "https://user-images.githubusercontent.com/78515689/159396237-0972a02b-5911-44b7-a864-e24bd61223b2.png" width="400px" height="270px">
-<img src = "https://user-images.githubusercontent.com/78515689/159396749-778182f0-e172-4ff4-b79a-b9d37b7ba4e0.jpg" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159396749-778182f0-e172-4ff4-b79a-b9d37b7ba4e0.jpg" width="400px" height="270px">
 
 ## Tip 2: OpenCV compile 🤢
 I tried to utilize the pre-installed opencv-python, but it kept giving me some errors.
@@ -41,7 +41,7 @@ Things to be careful when installing OpenCV:
 
   * Once your build is successfully completed, you can see from `jtop` that OpenCV has been successfully compiled with CUDA.
   
-<img src = "https://user-images.githubusercontent.com/78515689/159414692-acce5b4f-daaa-4e2c-b77f-84818c279463.JPG" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159414692-acce5b4f-daaa-4e2c-b77f-84818c279463.JPG" width="400px" height="270px">
   
 ## Tip 3: Change requirements.txt in yolov5 folder 😘
 In my case, I uninstalled opencv-python. However, when running the yolov5 (detect.py), it kept installing the opencv-python and this eventually caused errors.
@@ -55,7 +55,7 @@ Some of you guys may suffer from larger screen frame than the size of the monito
 
 I suffered as I am using a mini monitor for Jetson Nano (check the image below).
 
-<img src = "https://user-images.githubusercontent.com/78515689/159601538-4acda8fa-9f9f-4500-bc3c-d596789624b9.png" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159601538-4acda8fa-9f9f-4500-bc3c-d596789624b9.png" width="400px" height="270px">
 
 In this case, you can simply resolve this matter by checking the supported frame sizez of the camera, and add two more lines under the `class LoadStreams:` in **datasets.py** file.
 
@@ -76,8 +76,8 @@ yolov5/
     * `v4l2-ctl --list-formats-ext`
     * You can see that the supported frame sizes are various such as 640(width)x480(height), 800(w)x600(h) etc.
     
-<img src = "https://user-images.githubusercontent.com/78515689/159601289-1e0a7950-b417-48dd-be2a-5da56f199a77.png" width="400px" height="270px"></img>
-<img src = "https://user-images.githubusercontent.com/78515689/159601353-59f5585d-ea89-4f18-ac5a-98a4e8515fc1.png" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159601289-1e0a7950-b417-48dd-be2a-5da56f199a77.png" width="400px" height="270px">
+<img src = "https://user-images.githubusercontent.com/78515689/159601353-59f5585d-ea89-4f18-ac5a-98a4e8515fc1.png" width="400px" height="270px">
 
  2. Add two more lines under the `class LoadStreams:` in **datasets.py** file.
  
@@ -85,15 +85,15 @@ yolov5/
     * `int(cap.set(cv2.CAP_PROP_FRAME_WIDTH, supported width value))`
     * `int(cap.set(cv2.CAP_PROP_FRAME_HEIGHT, supported height value))`
     
-<img src = "https://user-images.githubusercontent.com/78515689/159602346-9a255892-85e6-4fae-be11-2b622e162d68.png" width="500px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159602346-9a255892-85e6-4fae-be11-2b622e162d68.png" width="500px" height="270px">
 
  3. If you add any unsupported values of width and height, you will receive GStreamer warning like the image below.
 
-<img src = "https://user-images.githubusercontent.com/78515689/159603853-dd4a1f41-2d8b-418b-999d-44088cc79148.png" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159603853-dd4a1f41-2d8b-418b-999d-44088cc79148.png" width="400px" height="270px">
 
  4. Save the changes, and run YOLOv5 to check the frame size.
 
-<img src = "https://user-images.githubusercontent.com/78515689/159603375-72be5013-15ce-4385-9f48-ec4cefe2796e.png" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159603375-72be5013-15ce-4385-9f48-ec4cefe2796e.png" width="400px" height="270px">
     
 * * *
 
@@ -111,12 +111,12 @@ Please check the compatible torch and torchvision versions in the [Nvidia develo
 
 Go to the link attached above, click **Installation**, then you can see the compatible versions as below:
 
-<img src = "https://user-images.githubusercontent.com/78515689/159426599-a274a345-bb20-4500-9ff9-0dcf9f78f8b4.png" width="400px" height="270px"></img>
-<img src = "https://user-images.githubusercontent.com/78515689/159426709-fb42ac73-9700-4332-b21e-b40e59297da9.JPG" width="600px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159426599-a274a345-bb20-4500-9ff9-0dcf9f78f8b4.png" width="400px" height="270px">
+<img src = "https://user-images.githubusercontent.com/78515689/159426709-fb42ac73-9700-4332-b21e-b40e59297da9.JPG" width="600px" height="270px">
 
 In my case, I installed torch 1.7.0 and torchvision 0.8.1, and did not get the error anymore.
 
-<img src = "https://user-images.githubusercontent.com/78515689/159422796-def224dc-63f9-4c21-874e-75f99f9ca878.JPG" width="400px" height="270px"></img>
+<img src = "https://user-images.githubusercontent.com/78515689/159422796-def224dc-63f9-4c21-874e-75f99f9ca878.JPG" width="400px" height="270px">
 
 ## Error 3: The_imagingft C module is not installed 😑
 This is because your PIL has been compiled without **libfreetype**.
