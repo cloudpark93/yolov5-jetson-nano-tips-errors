@@ -1,4 +1,4 @@
-# yolov5-jetson-nano
+# YOLOv5 on Jetson Nano Tips and Errors 🍕
 This is to **share some tips and my personal experinece to solve errors** when installing YOLOv5 on Jetson Nano.
 
 For anyone who would like to begin with "How to install YOLOv5 on Jetson Nano", please search it in google.
