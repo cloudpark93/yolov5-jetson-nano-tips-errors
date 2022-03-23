@@ -69,6 +69,8 @@ yolov5/
     │   ...
 ```
 
+ 0. ***I uploaded the edited datasets.py in this repository! Please read the followings before you use it!*** 🙃
+ 
  1. Check the supported frame sizes of the camera in the terminal.
  
     * `v4l2-ctl --list-formats-ext`
