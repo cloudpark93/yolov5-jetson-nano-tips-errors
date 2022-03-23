@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cloudpark93.github.io/yolov5-jetson-nano-tips-errors/sitemap.xml
