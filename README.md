@@ -56,7 +56,7 @@ I suffered as I am using a mini monitor for Jetson Nano (check the image below).
 
 <img src = "https://user-images.githubusercontent.com/78515689/159601538-4acda8fa-9f9f-4500-bc3c-d596789624b9.png" width="400px" height="270px">
 
-In this case, you can simply resolve this matter by checking the supported frame sizez of the camera, and add two more lines under the `class LoadStreams:` in **datasets.py** file.
+In this case, you can simply resolve this matter by checking the supported frame sizes of the camera, and add two more lines under the `class LoadStreams:` in **datasets.py** file.
 
 For your information, the location of **datasets.py** is ***yolov5 → utils → datasets.py***
 
