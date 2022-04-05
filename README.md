@@ -3,7 +3,7 @@ This is to **share some tips and my personal experinece to solve errors** when i
 
 For anyone who would like to begin with "How to install YOLOv5 on Jetson Nano", please search it in google.
 
-There are tons of githubs and blogs which kindly gives you the instructions on "how to install YOLOv5 on Jetson Nano" in google.
+There are tons of githubs and blogs which kindly give you the instructions on "how to install YOLOv5 on Jetson Nano" in google.
 
 * [YOLOv5 developer's github](https://github.com/ultralytics/yolov5)
 
